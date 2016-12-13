@@ -29,10 +29,10 @@ app.use((req, res, next) => {
     next();
 });
 
-// Maintenance middleware 
-app.use((req, res, next) => {
-    res.render('maintenance');
-});
+// // Maintenance middleware 
+// app.use((req, res, next) => {
+//     res.render('maintenance');
+// });
 
 app.use(express.static(__dirname + "/public"));
 
@@ -77,6 +77,12 @@ app.get('/about', function(req, res) {
 app.get('/bad', function(req, res) {
     res.send({
         errorMessage: "Error handling request"
+    });
+});
+
+app.get('/projects', function(req, res) {
+    res.render('projects', {
+        pageTitle: 'Projects Page'
     });
 });
 
